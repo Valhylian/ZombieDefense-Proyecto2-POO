@@ -68,13 +68,16 @@ public class Emergente {
 		if (moverse == false) {
 			este.setEnabled(false);
 		}
-		este.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.mover("E", 1);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			este.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.mover("E", 1);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		este.setBounds(116, 149, 45, 44);
 		frame.getContentPane().add(este);
 		
@@ -85,13 +88,16 @@ public class Emergente {
 		if (moverse == false) {
 			norte.setEnabled(false);
 		}
-		norte.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.mover("N", 1);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			norte.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.mover("N", 1);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		norte.setBounds(72, 103, 45, 44);
 		frame.getContentPane().add(norte);
 		
@@ -101,13 +107,16 @@ public class Emergente {
 		if (moverse == false) {
 			sur.setEnabled(false);
 		}
-		sur.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.mover("S", 1);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			sur.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.mover("S", 1);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		sur.setBounds(72, 193, 45, 44);
 		frame.getContentPane().add(sur);
 		
@@ -117,13 +126,16 @@ public class Emergente {
 		if (moverse == false) {
 			oeste.setEnabled(false);
 		}
-		oeste.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.mover("O", 1);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			oeste.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.mover("O", 1);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		oeste.setBounds(28, 149, 45, 44);
 		frame.getContentPane().add(oeste);
 		
@@ -137,13 +149,16 @@ public class Emergente {
 		if (moverse == false) {
 			noreste.setEnabled(false);
 		}
-		noreste.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.mover("NE", 1);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			noreste.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.mover("NE", 1);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		noreste.setBounds(126, 110, 28, 31);
 		frame.getContentPane().add(noreste);
 		
@@ -152,13 +167,16 @@ public class Emergente {
 		if (moverse == false) {
 			sureste.setEnabled(false);
 		}
-		sureste.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.mover("SE", 1);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			sureste.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.mover("SE", 1);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		sureste.setBounds(126, 204, 28, 31);
 		frame.getContentPane().add(sureste);
 		
@@ -167,13 +185,16 @@ public class Emergente {
 		if (moverse == false) {
 			suroeste.setEnabled(false);
 		}
-		suroeste.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.mover("SO", 1);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			suroeste.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.mover("SO", 1);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		suroeste.setBounds(38, 204, 28, 31);
 		frame.getContentPane().add(suroeste);
 		
@@ -182,13 +203,16 @@ public class Emergente {
 		if (moverse == false) {
 			noroeste.setEnabled(false);
 		}
-		noroeste.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.mover("NO", 1);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			noroeste.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.mover("NO", 1);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		noroeste.setBounds(38, 114, 28, 31);
 		frame.getContentPane().add(noroeste);
 		
@@ -196,14 +220,17 @@ public class Emergente {
 		if (usarItem == false) {
 			btnUsarItem.setEnabled(false);
 		}
-		btnUsarItem.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				Inventario.initInventario(jugador);
-				System.out.println("aquii" + jugador.tipo);
-				Interfaz.refrescar();
-			}
-		});
+		else {
+			btnUsarItem.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					Inventario.initInventario(jugador);
+					System.out.println("aquii" + jugador.tipo);
+					Interfaz.refrescar();
+				}
+			});
+		}
+		
 		btnUsarItem.setBackground(Color.GRAY);
 		btnUsarItem.setBounds(272, 173, 135, 23);
 		frame.getContentPane().add(btnUsarItem);
@@ -212,12 +239,15 @@ public class Emergente {
 		if (atacar == false) {
 			btnNewButton_1.setEnabled(false);
 		}
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jugador.atacar();
-			}
-		});
+		else {
+			btnNewButton_1.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					jugador.atacar();
+				}
+			});
+		}
+		
 		btnNewButton_1.setBackground(Color.GRAY);
 		btnNewButton_1.setBounds(272, 129, 135, 23);
 		frame.getContentPane().add(btnNewButton_1);
