@@ -43,6 +43,8 @@ public class Celda extends JButton {
 			}
 			Tablero.ruido[Main.turnoPJ.posicionX][Main.turnoPJ.posicionY]= Main.turnoPJ.armaEquipada.lvlRuido;
 			Tablero.timingJugador ++;
+			Emergente.atacar = false;
+			Emergente.desactivarBotones(Main.turnoPJ.tipo-1, Main.turnoPJ);
 			return true;
 			
 		}

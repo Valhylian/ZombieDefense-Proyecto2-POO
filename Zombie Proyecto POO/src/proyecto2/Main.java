@@ -7,9 +7,9 @@ import javax.swing.JOptionPane;
 
 public class Main {
 	
-	static Jugador turnoPJ ;
 	
-	static Enemigo zombie1= new Enemigo (11,6,8); //HABILIDAD ESPECIAL DOBLE VIDA
+	
+	static Enemigo zombie1= new Enemigo (11,4,1); //HABILIDAD ESPECIAL DOBLE VIDA
 	static Enemigo zombie2= new Enemigo (22,7,8); //HABILIDAD ESPECIAL DOBLE FUERZA
 	static Enemigo zombie3= new Enemigo (33,8,8); //HABILIDAD ESPECIAL DOBLE VISION
 	
@@ -36,6 +36,7 @@ public class Main {
 	
 	static Jugador jugadores[] = {j1,j2,j3};
 	
+	static Jugador turnoPJ = j1;
 	//*********************************************************************************************************
 	//LISTAS DE ZOMBIES ********************************************************************************
 	
@@ -52,9 +53,11 @@ public class Main {
 		
 		while (turno<=10) {
 			JOptionPane.showMessageDialog(null, "INICIA EL TURNO: "+ turno);
+			
 			if (turno == 1) {
 					Interfaz.init();
 				}
+			
 			Jugador.turnoJugador();
 			Enemigo.turnoZombie ();
 					
@@ -80,6 +83,12 @@ public class Main {
 			
 			Tablero.spawning = false;
 			
+			//HABILIDAD ESPECIAL REINICIAR VIDA
+			if (j2.nivel >= 4) {
+				j2.vida = 100;
+				JOptionPane.showMessageDialog(null, "SE REINICIA LA VIDA DEL JUGADOR 2 AL INICIAR EL SIGUIENTE TURNO GRACIAS A SU HABILIDAD ESPECIAL (ADQUIRIDA EN LVL 4)");
+			}
+			
 			
 			while (Tablero.sigTurno == false) {
 				try {
@@ -92,6 +101,9 @@ public class Main {
 			
 			
 			Tablero.sigTurno = false;
+			
+			
+			
 			turno ++;
 		}
 		System.out.println("SALI");
@@ -112,7 +124,7 @@ public class Main {
 		Item itemCura2 = new Item(10, "curativo");
 		Item itemExp = new Item(10, "experiencia");
 		
-		j2.inventarioItems.add(itemExp);
+		j1.inventarioItems.add(itemExp);
 		j3.inventarioItems.add(itemCura);
 		/*
 		j3.inventarioItems.add(itemCura2);

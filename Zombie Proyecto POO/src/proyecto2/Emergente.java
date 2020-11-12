@@ -17,11 +17,13 @@ import java.awt.Color;
 
 public class Emergente {
 
+	public static boolean moverse = true;
+	public static boolean atacar = true;
+	public static boolean usarItem = true;
 	private static JFrame frame;
 	static ImageIcon abajo=new ImageIcon("imagenes"+File.separator+"flechaAbajo.png");
-	/**
-	 * Launch the application.
-	 */
+	
+	
 	public static void init(int type, Jugador jugador) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -35,16 +37,11 @@ public class Emergente {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+
 	public Emergente(int type, Jugador jugador) {
 		initialize(type, jugador);
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize(int type, Jugador jugador) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -68,6 +65,9 @@ public class Emergente {
 		JButton este = new JButton("\u2192");
 		este.setBackground(Color.GRAY);
 		este.setFont(new Font("Tahoma", Font.BOLD, 10));
+		if (moverse == false) {
+			este.setEnabled(false);
+		}
 		este.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -82,6 +82,9 @@ public class Emergente {
 		norte.setForeground(Color.BLACK);
 		norte.setFont(new Font("Tahoma", Font.BOLD, 14));
 		norte.setBackground(Color.GRAY);
+		if (moverse == false) {
+			norte.setEnabled(false);
+		}
 		norte.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -95,6 +98,9 @@ public class Emergente {
 		JButton sur = new JButton("\u2193");
 		sur.setFont(new Font("Tahoma", Font.BOLD, 14));
 		sur.setBackground(Color.GRAY);
+		if (moverse == false) {
+			sur.setEnabled(false);
+		}
 		sur.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -108,6 +114,9 @@ public class Emergente {
 		JButton oeste = new JButton("\u2190");
 		oeste.setFont(new Font("Tahoma", Font.BOLD, 10));
 		oeste.setBackground(Color.GRAY);
+		if (moverse == false) {
+			oeste.setEnabled(false);
+		}
 		oeste.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -125,6 +134,9 @@ public class Emergente {
 		
 		JButton noreste = new JButton("");
 		noreste.setBackground(Color.LIGHT_GRAY);
+		if (moverse == false) {
+			noreste.setEnabled(false);
+		}
 		noreste.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -137,6 +149,9 @@ public class Emergente {
 		
 		JButton sureste = new JButton("");
 		sureste.setBackground(Color.LIGHT_GRAY);
+		if (moverse == false) {
+			sureste.setEnabled(false);
+		}
 		sureste.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -149,6 +164,9 @@ public class Emergente {
 		
 		JButton suroeste = new JButton("");
 		suroeste.setBackground(Color.LIGHT_GRAY);
+		if (moverse == false) {
+			suroeste.setEnabled(false);
+		}
 		suroeste.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -161,6 +179,9 @@ public class Emergente {
 		
 		JButton noroeste = new JButton("");
 		noroeste.setBackground(Color.LIGHT_GRAY);
+		if (moverse == false) {
+			noroeste.setEnabled(false);
+		}
 		noroeste.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -172,10 +193,14 @@ public class Emergente {
 		frame.getContentPane().add(noroeste);
 		
 		JButton btnUsarItem = new JButton("USAR ITEM");
+		if (usarItem == false) {
+			btnUsarItem.setEnabled(false);
+		}
 		btnUsarItem.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				Inventario.initInventario(jugador);
+				System.out.println("aquii" + jugador.tipo);
 				Interfaz.refrescar();
 			}
 		});
@@ -184,6 +209,9 @@ public class Emergente {
 		frame.getContentPane().add(btnUsarItem);
 		
 		JButton btnNewButton_1 = new JButton("ATACAR");
+		if (atacar == false) {
+			btnNewButton_1.setEnabled(false);
+		}
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -212,9 +240,16 @@ public class Emergente {
 	}
 	
 	static void desactivarBotonMovimiento(int type, Jugador jugador) {
+		moverse = false;
 		frame.getContentPane().removeAll();
 		frame.setVisible(false);
-		cargarDatosMovimientoBloqueado(type,jugador) ;
+		cargarDatos(type,jugador) ;
+		frame.setVisible(true);	
+	}
+	static void desactivarBotones(int type, Jugador jugador) {
+		frame.getContentPane().removeAll();
+		frame.setVisible(false);
+		cargarDatos(type,jugador) ;
 		frame.setVisible(true);	
 	}
 	

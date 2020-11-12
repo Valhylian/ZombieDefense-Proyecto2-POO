@@ -52,7 +52,7 @@ public class Jugador extends Personaje {
     }
 	
 	//USAR ITEM ********************************
-	public boolean usarItem (String _item) { //tipo = curacion o experencia
+	public boolean usarItem (Jugador jugador, String _item) { //tipo = curacion o experencia
 		int size=inventarioItems.size();
 		int anterior = vida;
 		int expAnterior = exp;
@@ -103,6 +103,11 @@ public class Jugador extends Personaje {
 				inventarioItems.remove(i);
 				Tablero.timingJugador+=1;
 				Inventario.refrescarInventario();
+				System.out.println("aquii Final" + jugador.tipo);
+				Emergente.usarItem = false;
+				Emergente.desactivarBotones(jugador.tipo-1, jugador);
+				
+				
 				return true;
 			}
 		}
@@ -192,14 +197,19 @@ public class Jugador extends Personaje {
 				armaEquipada = arma;
 				
 				JOptionPane.showMessageDialog(null, "ARMA EQUIPADA");
+				Emergente.usarItem = false;
+				Emergente.desactivarBotones(Main.turnoPJ.tipo-1, Main.turnoPJ);
 				Inventario.refrescarInventario();
 				Tablero.timingJugador+=1;
+				
 				return true;}
 			
 			armaEquipada = arma;
 			Tablero.timingJugador+=1;
 			Inventario.refrescarInventario();
 			JOptionPane.showMessageDialog(null, "ARMA EQUIPADA");
+			Emergente.usarItem = false;
+			Emergente.desactivarBotones(Main.turnoPJ.tipo-1, Main.turnoPJ);
 			return true;}
 			
 			}
@@ -274,6 +284,9 @@ public class Jugador extends Personaje {
 	
 	public static void turnoJugador() {
 		for (int i=0; i<3; i++) {
+			Emergente.moverse = true;
+			Emergente.atacar = true;
+			Emergente.usarItem = true;
 			Main.turnoPJ = Main.jugadores[i];
 			Main.turnoPJ.modoAtaque = false;
 			Main.jugadores[i].contMovimienetos = 0;

@@ -60,7 +60,7 @@ public class InfoItem {
 			JButton usar = new JButton("Usar Item.");
 			usar.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					jugador.usarItem("curativo");
+					jugador.usarItem(jugador, "curativo");
 					frame.dispose();
 					Interfaz.refrescar();
 				}
@@ -83,7 +83,8 @@ public class InfoItem {
 			JButton usar = new JButton("Usar Item.");
 			usar.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					jugador.usarItem("experiencia");
+					jugador.usarItem(jugador, "experiencia");
+					System.out.println("aquii" + jugador.tipo);
 					frame.dispose();
 					Interfaz.refrescar();
 				}
