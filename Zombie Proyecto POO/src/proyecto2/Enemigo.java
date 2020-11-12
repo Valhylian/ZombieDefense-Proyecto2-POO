@@ -100,7 +100,9 @@ public class Enemigo extends Personaje {
 	}
 	
 	public static void turnoZombie () {
+		System.out.println(Main.zombies);
 		for (int i=0; i<Main.zombies.size(); i++) {
+			
 			//Interfaz.refrescar();
 			if (Main.zombies.get(i).atacar (1, Main.zombies.get(i).posicionX, Main.zombies.get(i).posicionY, Main.zombies.get(i).fuerza) ) {
 				System.out.println("ATACA");}
@@ -115,8 +117,9 @@ public class Enemigo extends Personaje {
 			else if (Main.zombies.get(i).moverAlRuido(1)) {
 				System.out.println("AVANZA A RUIDO 1");}
 			else if (Main.zombies.get(i).avanzarBase()) {
-				
 				System.out.println("AVANZA A LA BASE");}
+			else  {
+				JOptionPane.showMessageDialog(null, "NO HACE NADA! ");}
 				
 		}
 		ResumeTurnoZombie.init();
@@ -232,6 +235,8 @@ public boolean avanzarAPJ () {
 			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJNorte().tipo + " Y AVANZA HACIA EL");
 			Tablero.matriz[posicionX][posicionY] = 0; 
 			Tablero.matriz[posicionX-1][posicionY] = tipo; //AVANZA
+			posicionX= posicionX-1;
+			
 			return true;}
 	}
 	if (vePJSur() != null) {
@@ -239,6 +244,7 @@ public boolean avanzarAPJ () {
 			JOptionPane.showMessageDialog(null, "ZOMBIE:  "+tipo+ "VE A JUGADOR:  "+vePJSur().tipo + " AL SUR Y AVANZA HACIA EL");
 			Tablero.matriz[posicionX][posicionY] = 0; 
 			Tablero.matriz[posicionX+1][posicionY] = tipo; //AVANZA
+			posicionX= posicionX+1;
 			return true;}
 	}
 	if (vePJEste() != null) {
@@ -246,6 +252,7 @@ public boolean avanzarAPJ () {
 			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJEste().tipo + " Y AVANZA HACIA EL");
 			Tablero.matriz[posicionX][posicionY] = 0; 
 			Tablero.matriz[posicionX][posicionY+1] = tipo; //AVANZA
+			posicionY= posicionY+1;
 			return true;}
 	}
 	if (vePJOeste() != null) {
@@ -253,6 +260,7 @@ public boolean avanzarAPJ () {
 			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJOeste().tipo + " Y AVANZA HACIA EL");
 			Tablero.matriz[posicionX][posicionY] = 0; 
 			Tablero.matriz[posicionX][posicionY-1] = tipo; //AVANZA
+			posicionY= posicionY-1;
 			return true;}
 	}
 	return false;
@@ -268,6 +276,7 @@ public boolean moverAlRuido(int nivel) {
 						JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "ESCUCHA UN RUIDO NIVEL: "+nivel + " Y AVANZA HACIA EL");
 						Tablero.matriz[posicionX][posicionY] = 0; 
 						Tablero.matriz[posicionX-1][posicionY] = tipo; //AVANZA
+						posicionX= posicionX-1;
 						return true;}}
 				if (i>posicionX) {
 					//AL SUR
@@ -275,6 +284,7 @@ public boolean moverAlRuido(int nivel) {
 						JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "ESCUCHA UN RUIDO NIVEL: "+nivel + " Y AVANZA HACIA EL");
 						Tablero.matriz[posicionX][posicionY] = 0; 
 						Tablero.matriz[posicionX+1][posicionY] = tipo; //AVANZA
+						posicionX= posicionX+1;
 						return true;}}
 				if (j<posicionY) {
 					//AL OESTE
@@ -282,6 +292,7 @@ public boolean moverAlRuido(int nivel) {
 						JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "ESCUCHA UN RUIDO NIVEL: "+nivel + " Y AVANZA HACIA EL");
 						Tablero.matriz[posicionX][posicionY] = 0; 
 						Tablero.matriz[posicionX][posicionY-1] = tipo; //AVANZA
+						posicionY= posicionY-1;
 						return true;}}
 				if (j>posicionY) {
 					//AL OESTE
@@ -289,6 +300,7 @@ public boolean moverAlRuido(int nivel) {
 						JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "ESCUCHA UN RUIDO NIVEL: "+nivel + " Y AVANZA HACIA EL");
 						Tablero.matriz[posicionX][posicionY] = 0; 
 						Tablero.matriz[posicionX][posicionY+1] = tipo; //AVANZA
+						posicionY= posicionY+1;
 						return true;}}
 			}
 			
@@ -304,6 +316,7 @@ public boolean avanzarBase() { //4,0
 			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "AVANZA A LA BASE");
 			Tablero.matriz[posicionX][posicionY] = 0; 
 			Tablero.matriz[posicionX-1][posicionY] = tipo; //AVANZA
+			posicionX= posicionX-1;
 			return true;}}
 	if (4>posicionX) {
 		//AL SUR
@@ -311,6 +324,7 @@ public boolean avanzarBase() { //4,0
 			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "AVANZA A LA BASE");
 			Tablero.matriz[posicionX][posicionY] = 0; 
 			Tablero.matriz[posicionX+1][posicionY] = tipo; //AVANZA
+			posicionX= posicionX+1;
 			return true;}}
 	if (0<=posicionY) {
 		//AL OESTE
@@ -318,6 +332,7 @@ public boolean avanzarBase() { //4,0
 			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "AVANZA A LA BASE");
 			Tablero.matriz[posicionX][posicionY] = 0; 
 			Tablero.matriz[posicionX][posicionY-1] = tipo; //AVANZA
+			posicionY= posicionY-1;
 			return true;}}
 	
 	return false;

@@ -9,11 +9,9 @@ public class Main {
 	
 	static Jugador turnoPJ ;
 	
-	static Enemigo zombie1= new Enemigo (11,4,1); //HABILIDAD ESPECIAL DOBLE VIDA
-	static Enemigo zombie2= new Enemigo (22,6,0); //HABILIDAD ESPECIAL DOBLE FUERZA
-	static Enemigo zombie3= new Enemigo (33,4,8); //HABILIDAD ESPECIAL DOBLE VISION
-	
-	
+	static Enemigo zombie1= new Enemigo (11,6,8); //HABILIDAD ESPECIAL DOBLE VIDA
+	static Enemigo zombie2= new Enemigo (22,7,8); //HABILIDAD ESPECIAL DOBLE FUERZA
+	static Enemigo zombie3= new Enemigo (33,8,8); //HABILIDAD ESPECIAL DOBLE VISION
 	
 	//DECLARACION DE ARMAS **********************************************************************************
 	

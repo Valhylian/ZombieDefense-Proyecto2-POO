@@ -5,7 +5,7 @@ public class Tablero {
 	public static boolean continuarZombie = false;
 	public static boolean sigTurno = false;
 	public static boolean spawning = false;
-	public static int matriz[][] = {{0,0,0,5,0,0,0,0,0,100},
+	public static int matriz[][] = {{0,0,0,5,0,0,0,0,0,0},
 									{0,0,0,5,0,0,0,0,0,101},
 									{100,100,0,200,0,0,0,0,0,0},
 									{0,0,0,201,5,0,0,0,0,0},
@@ -54,20 +54,85 @@ public class Tablero {
 		
 		ruido = ruido2;
 	}
-	
-	public static boolean spawningPoints (int turno) {
+	public static boolean colocarZombie (int tipo) {
 		for (int i=0;i<10;i++) {
-			for (int j=9;j<10;j++) {
+			for (int j=9;j>7;j--) {
+				
 				if (matriz[i][j]==0) {
-					Enemigo zombie = new Enemigo(11,i,j);
-					matriz[i][j] = 11;
+					Main.zombies.add(new Enemigo(tipo,i,j));
+					matriz[i][j] = tipo;
 					spawning = true;
-					return true;
-				}
-			}
+					return true;}
+						
+			}}
+		return false;
+	}
+	
+	public static boolean colocarZombieAbajo (int tipo) {
+		for (int i=9;i>=0;i++) {
+			for (int j=9;j>7;j--) {
+				
+				if (matriz[i][j]==0) {
+					Main.zombies.add(new Enemigo(tipo,i,j));
+					matriz[i][j] = tipo;
+					spawning = true;
+					return true;}
+						
+			}}
+		return false;
+	}
+	public static void spawningPoints (int turno) {
+		if (turno == 1) {
+			colocarZombie (11);
 		}
-		spawning = true;
-	return false;
+		if (turno == 2) {
+			colocarZombieAbajo (11);
+		}
+		if (turno == 3) {
+			colocarZombie (11);
+			colocarZombieAbajo (22);
+		}
+		if (turno == 4) {
+			colocarZombie (11);
+			colocarZombie (22);
+		}
+		if (turno == 5) {
+			colocarZombieAbajo (22);
+			colocarZombie (33);
+		}
+		if (turno == 6) {
+			colocarZombie (11);
+			colocarZombie (22);
+			colocarZombieAbajo (33);
+		}
+		
+		if (turno == 7) {
+			colocarZombie (11);
+			colocarZombieAbajo (22);
+			colocarZombie (33);
+		}
+		
+		if (turno == 8) {
+			colocarZombie (11);
+			colocarZombie (22);
+			colocarZombieAbajo (33);
+			colocarZombieAbajo (22);
+		}
+		
+		if (turno == 9) {
+			colocarZombie (11);
+			colocarZombieAbajo (22);
+			colocarZombieAbajo (33);
+			colocarZombie (22);
+		}
+		
+		if (turno == 10) {
+			colocarZombieAbajo (11);
+			colocarZombieAbajo (22);
+			colocarZombie (33);
+			colocarZombie (22);
+
+		}
 	}
 	
 
