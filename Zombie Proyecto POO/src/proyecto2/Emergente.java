@@ -277,6 +277,7 @@ public class Emergente {
 		frame.setVisible(true);	
 	}
 	static void desactivarBotones(int type, Jugador jugador) {
+		System.out.println("Main Turno"+ jugador.tipo);
 		frame.getContentPane().removeAll();
 		frame.setVisible(false);
 		cargarDatos(type,jugador) ;

@@ -246,12 +246,12 @@ public class Personaje {
 
     public void obtenerItem (String tipo) {
     	if (tipo == "curativo") {
-    		Item itemCurativo = new Item(10, "curativo");
-    		Main.turnoPJ.inventarioItems.add(itemCurativo);
+    		Main.turnoPJ.inventarioItems.add(new Item(10, "curativo"));
+    		System.out.println(Main.turnoPJ.tipo);
     	}
     	else {
-    		Item itemExp = new Item(10, "experiencia");
-    		Main.turnoPJ.inventarioItems.add(itemExp);
+    		Main.turnoPJ.inventarioItems.add(new Item(10, "experiencia"));
+    		System.out.println("exp " +Main.turnoPJ.tipo);
     	}
     	
 	}

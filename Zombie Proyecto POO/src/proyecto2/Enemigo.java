@@ -41,6 +41,8 @@ public class Enemigo extends Personaje {
     			JOptionPane.showMessageDialog(null, "ZOMBIE ATACA AL PERSONAJE: "+ Celda.botonesMatriz[x-range][y].jugador.tipo + "CON UN ATACQUE DE: "+fuerza);
     			if (Celda.botonesMatriz[x-range][y].jugador.vida <= 0) {
     				JOptionPane.showMessageDialog(null, "LA VIDA DEL PJ LLEGO A 0, MURIO");
+    				Celda.botonesMatriz[x-range][y].jugador.posicionX =99;
+    				Celda.botonesMatriz[x-range][y].jugador.posicionY =99;
     				Tablero.matriz[x-range][y] = 0;
     				Celda.botonesMatriz[x-range][y].jugador = null;
     			}
@@ -56,6 +58,8 @@ public class Enemigo extends Personaje {
     			JOptionPane.showMessageDialog(null, "ZOMBIE ATACA AL PERSONAJE: "+ Celda.botonesMatriz[x+range][y].jugador.tipo + "CON UN ATACQUE DE: "+fuerza);
     			if (Celda.botonesMatriz[x+range][y].jugador.vida <= 0) {
     				JOptionPane.showMessageDialog(null, "LA VIDA DEL PJ LLEGO A 0, MURIO");
+    				Celda.botonesMatriz[x+range][y].jugador.posicionX =99;
+    				Celda.botonesMatriz[x+range][y].jugador.posicionY =99;
     				Tablero.matriz[x+range][y] = 0;
     				Celda.botonesMatriz[x+range][y].jugador = null;
     			}
@@ -72,6 +76,8 @@ public class Enemigo extends Personaje {
     			JOptionPane.showMessageDialog(null, "ZOMBIE ATACA AL PERSONAJE: "+ Celda.botonesMatriz[x][y+range].jugador.tipo + "CON UN ATACQUE DE: "+fuerza);
     			if (Celda.botonesMatriz[x][y+range].jugador.vida <= 0) {
     				JOptionPane.showMessageDialog(null, "LA VIDA DEL PJ LLEGO A 0, MURIO");
+    				Celda.botonesMatriz[x][y+range].jugador.posicionX =99;
+    				Celda.botonesMatriz[x][y+range].jugador.posicionY =99;
     				Tablero.matriz[x][y+range] = 0;
     				Celda.botonesMatriz[x][y+range].jugador = null;
     			}
@@ -86,6 +92,8 @@ public class Enemigo extends Personaje {
     			Celda.botonesMatriz[x][y-range].jugador.vida -= fuerza;
     			JOptionPane.showMessageDialog(null, "ZOMBIE ATACA AL PERSONAJE: "+ Celda.botonesMatriz[x][y-range].jugador.tipo + "CON UN ATACQUE DE: "+fuerza);
     			if (Celda.botonesMatriz[x][y-range].jugador.vida <= 0) {
+    				Celda.botonesMatriz[x][y-range].jugador.posicionX =99;
+    				Celda.botonesMatriz[x][y-range].jugador.posicionY =99;
     				JOptionPane.showMessageDialog(null, "LA VIDA DEL PJ LLEGO A 0, MURIO");
     				Tablero.matriz[x][y-range] = 0;
     				Celda.botonesMatriz[x][y-range].jugador = null;

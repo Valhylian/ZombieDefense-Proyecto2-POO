@@ -22,7 +22,7 @@ public class Jugador extends Personaje {
 	public Jugador(int _tipo, int x, int y, Arma _arma){
 		this.tipo=_tipo;
 		this.nivel = 3;
-		this.vida=80;
+		this.vida=10;
 		this.posicionX=x;
 		this.posicionY=y;
 		this.exp = 0;
@@ -137,7 +137,7 @@ public class Jugador extends Personaje {
 		int cont = 0;
 		
 		for (int i=0; i<size; i++) {
-			
+			System.out.println(inventarioItems.get(i).tipo);
 			if (inventarioItems.get(i).tipo == _item) 
 				cont ++;
 		}
@@ -227,12 +227,13 @@ public class Jugador extends Personaje {
 			System.out.println("entra");
 			if (contMovimienetos == 0) {
 				if (moverEspecial(direccion,desplazamiento)) {
+					Tablero.timingJugador --;
 					contMovimienetos ++;
 				}
 			}
 			else if (contMovimienetos == 1) {
 				JOptionPane.showMessageDialog(null, "HABILIDAD ESPECIAL MOVERSE DOS VECES");
-				Tablero.timingJugador --;
+				//Tablero.timingJugador --;
 				if (moverEspecial(direccion,desplazamiento)){
 					Emergente.desactivarBotonMovimiento(0, Main.j1);}
 			}
@@ -243,12 +244,13 @@ public class Jugador extends Personaje {
 			System.out.println("entra22");
 			if (contMovimienetos == 0) {
 				if (moverObstaculos(direccion,desplazamiento)) {
+					Tablero.timingJugador --;
 					contMovimienetos ++;
 				}
 			}
 			else if (contMovimienetos == 1) {
 				JOptionPane.showMessageDialog(null, "HABILIDAD ESPECIAL MOVERSE DOS VECES");
-				Tablero.timingJugador --;
+				//Tablero.timingJugador --;
 				if (moverObstaculos(direccion,desplazamiento)){
 					Emergente.desactivarBotonMovimiento(0, Main.j1);}
 			}
@@ -263,7 +265,7 @@ public class Jugador extends Personaje {
     	}
     	else if (tipo == 2) {
     		if (moverDefault(direccion,desplazamiento)) {
-    			Emergente.desactivarBotonMovimiento(1, Main.j1);
+    			Emergente.desactivarBotonMovimiento(1, Main.j2);
     		}
     		
     		
@@ -290,7 +292,14 @@ public class Jugador extends Personaje {
 			Main.turnoPJ = Main.jugadores[i];
 			Main.turnoPJ.modoAtaque = false;
 			Main.jugadores[i].contMovimienetos = 0;
-			Emergente.init(i,Main.jugadores[i]);
+			if (Main.turnoPJ.vida <= 0) {
+				JOptionPane.showMessageDialog(null, "EL PERSONAJE: "+Main.jugadores[i].tipo + " MURIO");
+				Tablero.timingJugador=3;
+			}
+			else {
+				Emergente.init(i,Main.jugadores[i]);
+			}
+			
 			while (Tablero.timingJugador < 3) {
 				try {
 					Thread.sleep(1000);
