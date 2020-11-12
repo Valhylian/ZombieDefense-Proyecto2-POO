@@ -30,8 +30,8 @@ public class Main {
 	//DECLARACION DE JUGADORES ********************************************************************************
 	//Jugador(int _tipo, int x, int y, Arma _arma)
 	
-	static Jugador j1= new Jugador (1,3,1,especial);
-	static Jugador j2= new Jugador (2,3,0,especial);
+	static Jugador j1= new Jugador (1,3,3,especial);
+	static Jugador j2= new Jugador (2,3,2,especial);
 	static Jugador j3= new Jugador (3,8,1,katana2);
 	
 	static Jugador jugadores[] = {j1,j2,j3};

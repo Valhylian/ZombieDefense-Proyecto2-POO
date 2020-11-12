@@ -21,11 +21,11 @@ public class Jugador extends Personaje {
 	
 	public Jugador(int _tipo, int x, int y, Arma _arma){
 		this.tipo=_tipo;
-		this.nivel = 3;
-		this.vida=10;
+		this.nivel = 1;
+		this.vida=100;
 		this.posicionX=x;
 		this.posicionY=y;
-		this.exp = 0;
+		this.exp = 2;
 		this.armaEquipada = _arma;
 		this.modoAtaque = false;
 		this.contMovimienetos =0;
@@ -35,17 +35,17 @@ public class Jugador extends Personaje {
 		if (_tipo == 1) {
 			habilidad1 = "DESTRUIR OBSTACULOS"; //LVL 2
 			habilidad2 = "MOVERSE 2 VECES";     //LVL 3
-			habilidad3 = "";
+			habilidad3 = "MOVERSE EN DIAGONAL"; //LVL 4
 		}
 		else if (_tipo == 2) {
-			habilidad1 = "";
-			habilidad2 = "";
-			habilidad3 = "";
+			habilidad1 = "PUEDE USAR ARMA DE FUEGO";
+			habilidad2 = "PUEDE USAR SUPER GUN";
+			habilidad3 = "REINICIA SU VIDA AL FINAL DE CADA TURNO";
 		}
 		else {
-			habilidad1 = "";
-			habilidad2 = "";
-			habilidad3 = "";
+			habilidad1 = "DUPLICA EL EFECTO DE CURACION DE ITEMS";
+			habilidad2 = "DUPLICA EL EFECTO DE EXPERIENCIA DE ITEMS";
+			habilidad3 = "DOBLE DAMAGE CON ARMAS DE CORTO ALCANCE";
 		}
 			
 		
@@ -99,7 +99,7 @@ public class Jugador extends Personaje {
 					
 					
 				}
-				
+				establecerLvl ();
 				inventarioItems.remove(i);
 				Tablero.timingJugador+=1;
 				Inventario.refrescarInventario();
