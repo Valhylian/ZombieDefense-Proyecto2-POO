@@ -10,12 +10,28 @@ public class Celda extends JButton {
 	private int y;
 	public Enemigo zombie;
 	public Jugador jugador;
+	public boolean spawinig;
 	
 	//constructor
 	Celda (int _x, int _y){
 		this.x = _x;
 		this.y = _y;
 		this.ruido=0;
+		
+		if (_y == 9) {
+			if (_x == 0) 
+				spawinig = true;
+			if (_x == 2) 
+				spawinig = true;
+			if (_x == 4) 
+				spawinig = true;
+			if (_x == 5) 
+				spawinig = true;
+			if (_x == 7) 
+				spawinig = true;
+			
+			
+		}
 	}
 	
 	public boolean ataqueAZombie () {

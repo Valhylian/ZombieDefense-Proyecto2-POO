@@ -9,9 +9,9 @@ public class Main {
 	
 	
 	
-	static Enemigo zombie1= new Enemigo (11,4,2); //HABILIDAD ESPECIAL DOBLE VIDA
-	static Enemigo zombie2= new Enemigo (22,7,8); //HABILIDAD ESPECIAL DOBLE FUERZA
-	static Enemigo zombie3= new Enemigo (33,8,8); //HABILIDAD ESPECIAL DOBLE VISION
+	static Enemigo zombie1= new Enemigo (11,1,9); //HABILIDAD ESPECIAL DOBLE VIDA
+	static Enemigo zombie2= new Enemigo (22,3,9); //HABILIDAD ESPECIAL DOBLE FUERZA
+	static Enemigo zombie3= new Enemigo (33,6,9); //HABILIDAD ESPECIAL DOBLE VISION
 	
 	//DECLARACION DE ARMAS **********************************************************************************
 	
@@ -30,9 +30,9 @@ public class Main {
 	//DECLARACION DE JUGADORES ********************************************************************************
 	//Jugador(int _tipo, int x, int y, Arma _arma)
 	
-	static Jugador j1= new Jugador (1,3,3,especial);
-	static Jugador j2= new Jugador (2,3,2,especial);
-	static Jugador j3= new Jugador (3,8,1,katana2);
+	static Jugador j1= new Jugador (1,0,1,katanaInicial);
+	static Jugador j2= new Jugador (2,3,2,katanaInicial);
+	static Jugador j3= new Jugador (3,8,1,katanaInicial);
 	
 	static Jugador jugadores[] = {j1,j2,j3};
 	

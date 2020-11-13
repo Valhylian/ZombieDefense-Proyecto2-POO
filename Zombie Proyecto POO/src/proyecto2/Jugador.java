@@ -25,7 +25,7 @@ public class Jugador extends Personaje {
 		this.vida=100;
 		this.posicionX=x;
 		this.posicionY=y;
-		this.exp = 2;
+		this.exp = 0;
 		this.armaEquipada = _arma;
 		this.modoAtaque = false;
 		this.contMovimienetos =0;

@@ -347,13 +347,39 @@ public class Interfaz {
 				}
 				
 				
-					
+				if (j == 9) {
+					if (i == 0) {
+						btnNewButton.setBackground(Color.CYAN);
+						btnNewButton.setOpaque(true);
+					}
+					if (i == 2) {
+						btnNewButton.setBackground(Color.CYAN);
+						btnNewButton.setOpaque(true);
+					}
+					if (i == 4) {
+						btnNewButton.setBackground(Color.CYAN);
+						btnNewButton.setOpaque(true);
+					}
+					if (i == 5) {
+						btnNewButton.setBackground(Color.CYAN);
+						btnNewButton.setOpaque(true);
+					}
+					if (i == 7) {
+						btnNewButton.setBackground(Color.CYAN);
+						btnNewButton.setOpaque(true);
+					}
+					if (i == 9) {
+						btnNewButton.setBackground(Color.CYAN);
+						btnNewButton.setOpaque(true);
+					}
+				}
 				
 				
 				panel_1.add(btnNewButton); 
 				
-				}
+				
 			}
+		}
 		
 		
 		
