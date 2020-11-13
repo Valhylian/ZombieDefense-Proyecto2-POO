@@ -37,6 +37,7 @@ public class Celda extends JButton {
 				Main.zombies.remove(Enemigo.buscarZombie(zombie.tipo, x, y));
 				zombie=null;
 				JOptionPane.showMessageDialog(null, "EL ZOMBIE MURIO, SUBE EXPERIENCIA + "+ experiencia);
+				Main.turnoPJ.establecerLvl();
 			}
 			else{
 				JOptionPane.showMessageDialog(null, "ATAQUE EXITOSO. NUEVA VIDA DEL ZOMBIE: "+zombie.vida);

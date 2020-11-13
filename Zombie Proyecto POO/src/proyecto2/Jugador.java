@@ -327,6 +327,8 @@ public class Jugador extends Personaje {
 			nivel = 2;
 			JOptionPane.showMessageDialog(null, "SUBE A LVL 2!");
 			JOptionPane.showMessageDialog(null, "NUEVA HABILIDAD: " +habilidad1);
+			inventarioArmas.add(Main.catapultaInicial);
+			JOptionPane.showMessageDialog(null, "ADQUIERE EL ARMA 'CATAPULTA INICIAL'");
 		}
 		else if (exp >= 30 && exp <60 && nivel != 3) {
 			nivel = 3;
