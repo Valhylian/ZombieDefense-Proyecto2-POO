@@ -5,6 +5,9 @@ public class Tablero {
 	public static boolean continuarZombie = false;
 	public static boolean sigTurno = false;
 	public static boolean spawning = false;
+	public static boolean finish = false;
+	public static boolean allDead = false;
+	
 	public static int matriz[][] = {{0,0,0,5,0,0,0,0,0,0},
 									{0,0,0,5,0,0,0,0,0,101},
 									{100,100,0,200,0,0,0,0,0,0},

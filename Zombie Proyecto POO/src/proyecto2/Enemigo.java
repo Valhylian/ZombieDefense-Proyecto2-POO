@@ -117,13 +117,13 @@ public class Enemigo extends Personaje {
 			else if (Main.zombies.get(i).avanzarAPJ()) {
 				System.out.println("AVANZA A PJ");}
 			else if (Main.zombies.get(i).moverAlRuido(4)) {
-				System.out.println("AVANZA A RUIDO 4");}
+				System.out.println("AVANZA A RUIDO NIVEL 4");}
 			else if (Main.zombies.get(i).moverAlRuido(3)) {
-				System.out.println("AVANZA A RUIDO 3");}
+				System.out.println("AVANZA A RUIDO NIVEL 3");}
 			else if (Main.zombies.get(i).moverAlRuido(2)) {
-				System.out.println("AVANZA A RUIDO 2");}
+				System.out.println("AVANZA A RUIDO NIVEL 2");}
 			else if (Main.zombies.get(i).moverAlRuido(1)) {
-				System.out.println("AVANZA A RUIDO 1");}
+				System.out.println("AVANZA A RUIDO NIVEL 1");}
 			else if (Main.zombies.get(i).avanzarBase()) {
 				System.out.println("AVANZA A LA BASE");}
 			else  {
@@ -131,9 +131,11 @@ public class Enemigo extends Personaje {
 				
 		}
 		ResumeTurnoZombie.init();
+		/*
 		if (Tablero.matriz[4][0] != 4) {
-			JOptionPane.showMessageDialog(null, "ZOMBIE LLEGA A LA BASE. GAME OVER! ");
-		}
+			//JOptionPane.showMessageDialog(null, "ZOMBIE LLEGA A LA BASE. GAME OVER! ");
+			FinishGame.initGameOver("ZOMBIE LLEGA A LA BASE.");
+		}*/
 	}
 	
 	/*

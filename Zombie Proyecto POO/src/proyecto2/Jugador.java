@@ -22,7 +22,7 @@ public class Jugador extends Personaje {
 	public Jugador(int _tipo, int x, int y, Arma _arma){
 		this.tipo=_tipo;
 		this.nivel = 1;
-		this.vida=100;
+		this.vida=1;
 		this.posicionX=x;
 		this.posicionY=y;
 		this.exp = 0;
@@ -205,11 +205,11 @@ public class Jugador extends Personaje {
 				return true;}
 			
 			armaEquipada = arma;
-			Tablero.timingJugador+=1;
 			Inventario.refrescarInventario();
 			JOptionPane.showMessageDialog(null, "ARMA EQUIPADA");
 			Emergente.usarItem = false;
 			Emergente.desactivarBotones(Main.turnoPJ.tipo-1, Main.turnoPJ);
+			Tablero.timingJugador+=1;
 			return true;}
 			
 			}
@@ -355,8 +355,13 @@ public class Jugador extends Personaje {
 		Interfaz.refrescar();
 	}
 	
-	
-	
-	
+	public static boolean  allDead() {
+		for (int i=0; i<3; i++) {
+			if (Main.jugadores[i].vida > 0 ) 
+				return false;
+		}
+		return true;
+	}
+
 	
 }

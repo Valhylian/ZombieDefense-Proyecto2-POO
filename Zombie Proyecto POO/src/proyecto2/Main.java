@@ -9,9 +9,9 @@ public class Main {
 	
 	
 	
-	static Enemigo zombie1= new Enemigo (11,1,9); //HABILIDAD ESPECIAL DOBLE VIDA
-	static Enemigo zombie2= new Enemigo (22,3,9); //HABILIDAD ESPECIAL DOBLE FUERZA
-	static Enemigo zombie3= new Enemigo (33,6,9); //HABILIDAD ESPECIAL DOBLE VISION
+	static Enemigo zombie1= new Enemigo (11,4,2); //HABILIDAD ESPECIAL DOBLE VIDA
+	static Enemigo zombie2= new Enemigo (22,4,1); //HABILIDAD ESPECIAL DOBLE FUERZA
+	static Enemigo zombie3= new Enemigo (33,4,3); //HABILIDAD ESPECIAL DOBLE VISION
 	
 	//DECLARACION DE ARMAS **********************************************************************************
 	
@@ -30,9 +30,9 @@ public class Main {
 	//DECLARACION DE JUGADORES ********************************************************************************
 	//Jugador(int _tipo, int x, int y, Arma _arma)
 	
-	static Jugador j1= new Jugador (1,0,1,katanaInicial);
+	static Jugador j1= new Jugador (1,3,1,katanaInicial);
 	static Jugador j2= new Jugador (2,3,2,katanaInicial);
-	static Jugador j3= new Jugador (3,8,1,katanaInicial);
+	static Jugador j3= new Jugador (3,3,3,katanaInicial);
 	
 	static Jugador jugadores[] = {j1,j2,j3};
 	
@@ -69,6 +69,33 @@ public class Main {
 					}	
 			}
 			Tablero.continuarZombie = false;
+			
+			if (Tablero.matriz[4][0] != 4) {
+				//JOptionPane.showMessageDialog(null, "ZOMBIE LLEGA A LA BASE. GAME OVER! ");
+				FinishGame.initGameOver("ZOMBIE LLEGA A LA BASE.");
+				while (Tablero.finish == false) {
+					try {
+						Thread.sleep(1000);
+						System.out.println("duermE");
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}	
+				}
+				
+			}
+			
+			else if (Jugador.allDead()) {
+				FinishGame.initGameOver("TODOS LOS PERSONAJES MURIERON.");
+				while (Tablero.allDead == false) {
+					try {
+						Thread.sleep(1000);
+						System.out.println("duermE");
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}	
+				}
+				
+			}
 			
 			Tablero.reiniciarRuido();
 			SpawningPoints.initSpawning();

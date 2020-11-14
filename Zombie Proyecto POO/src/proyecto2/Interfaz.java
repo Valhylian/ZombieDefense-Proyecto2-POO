@@ -395,4 +395,8 @@ public class Interfaz {
 		
 		
 	}
+	
+	static void salir() {
+		frame.dispose();
+	}
 }
