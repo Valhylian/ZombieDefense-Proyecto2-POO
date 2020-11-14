@@ -46,17 +46,18 @@ public class Main {
 	//CONTADOR DEL TURNO (MAXIMO 10)
 	static int turno = 1;
 	
-	
-
-	
+	//SECUENCIA DE CADA TURNO 
 	public static void secuenciaDeTurno () {
-		
+	
 		while (turno<=10) {
-			JOptionPane.showMessageDialog(null, "INICIA EL TURNO: "+ turno);
 			
+			//EN EL PRIMER TURNO INICIA LA INTERFAZ
 			if (turno == 1) {
 					Interfaz.init();
 				}
+			JOptionPane.showMessageDialog(null, "INICIA EL TURNO: "+ turno);
+			
+			
 			
 			Jugador.turnoJugador();
 			Enemigo.turnoZombie ();

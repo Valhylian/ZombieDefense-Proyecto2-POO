@@ -140,6 +140,8 @@ public class Interfaz {
 		panel.add(NivelPj1);
 		
 		JLabel VidaPj1 = new JLabel("Vida:  "+ Main.j1.vida);
+		if ( Main.j1.vida < 0) 
+			VidaPj1.setText("Vida: 0");
 		VidaPj1.setHorizontalAlignment(SwingConstants.LEFT);
 		VidaPj1.setBounds(82, 164, 99, 26);
 		panel.add(VidaPj1);
@@ -187,6 +189,8 @@ public class Interfaz {
 		panel.add(nivelPj2);
 		
 		JLabel vidaPj2 = new JLabel("Vida:  "+ Main.j2.vida);
+		if ( Main.j2.vida < 0) 
+			vidaPj2.setText("Vida: 0");
 		vidaPj2.setHorizontalAlignment(SwingConstants.LEFT);
 		vidaPj2.setBounds(82, 291, 99, 26);
 		panel.add(vidaPj2);
@@ -207,6 +211,9 @@ public class Interfaz {
 		panel.add(nivelPj3);
 		
 		JLabel vidaPj3 = new JLabel("Vida:  "+ Main.j3.vida);
+		if ( Main.j3.vida < 0) {
+			vidaPj3.setText("Vida: 0");
+		}
 		vidaPj3.setHorizontalAlignment(SwingConstants.LEFT);
 		vidaPj3.setBounds(82, 408, 99, 26);
 		panel.add(vidaPj3);
