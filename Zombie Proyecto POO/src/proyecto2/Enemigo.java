@@ -237,6 +237,43 @@ public Jugador vePJOeste() {
 		}
 	}
 	return null;}
+
+//RETORNA UN PJ
+public Jugador vePJNoreste() {
+	for (int i=1; i<=vision-1; i++ ) {
+		if (dentroDeTablero(posicionY+i) && dentroDeTablero(posicionX-i)) {
+			if (Tablero.matriz[posicionX-i][posicionY+i]==1 || Tablero.matriz[posicionX-i][posicionY+i]==2 || Tablero.matriz[posicionX-i][posicionY+i]==3) {
+				return Celda.botonesMatriz[posicionX-i][posicionY+i].jugador;}
+		}
+	}
+	return null;}
+
+public Jugador vePJNoroeste() {
+	for (int i=1; i<=vision-1; i++ ) {
+		if (dentroDeTablero(posicionY-i) && dentroDeTablero(posicionX-i)) {
+			if (Tablero.matriz[posicionX-i][posicionY-i]==1 || Tablero.matriz[posicionX-i][posicionY-i]==2 || Tablero.matriz[posicionX-i][posicionY-i]==3) {
+				return Celda.botonesMatriz[posicionX-i][posicionY-i].jugador;}
+		}
+	}
+	return null;}
+
+public Jugador vePJSuroeste() {
+	for (int i=1; i<=vision-1; i++ ) {
+		if (dentroDeTablero(posicionY-i) && dentroDeTablero(posicionX+i)) {
+			if (Tablero.matriz[posicionX+i][posicionY-i]==1 || Tablero.matriz[posicionX+i][posicionY-i]==2 || Tablero.matriz[posicionX+i][posicionY-i]==3) {
+				return Celda.botonesMatriz[posicionX+i][posicionY-i].jugador;}
+		}
+	}
+	return null;}
+
+public Jugador vePJSureste() {
+	for (int i=1; i<=vision-1; i++ ) {
+		if (dentroDeTablero(posicionY+i) && dentroDeTablero(posicionX+i)) {
+			if (Tablero.matriz[posicionX+i][posicionY+i]==1 || Tablero.matriz[posicionX+i][posicionY+i]==2 || Tablero.matriz[posicionX+i][posicionY+i]==3) {
+				return Celda.botonesMatriz[posicionX+i][posicionY+i].jugador;}
+		}
+	}
+	return null;}
 //*******************************************************************************************************************
 
 public boolean avanzarAPJ () {
@@ -273,6 +310,66 @@ public boolean avanzarAPJ () {
 			posicionY= posicionY-1;
 			return true;}
 	}
+	if (vePJNoreste() != null) {
+		if(Tablero.matriz[posicionX-1][posicionY]==0) {
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJNoreste().tipo + " Y AVANZA HACIA EL");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX-1][posicionY] = tipo; //AVANZA
+			//posicionY= posicionY+1;
+			posicionX = posicionX -1;
+			return true;}
+		else if (Tablero.matriz[posicionX][posicionY+1]==0) {
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJNoreste().tipo + " Y AVANZA HACIA EL");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX][posicionY+1] = tipo; //AVANZA
+			posicionY= posicionY+1;
+			return true;}}
+	
+	if (vePJNoroeste() != null) {
+		if(Tablero.matriz[posicionX-1][posicionY]==0) {
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJNoroeste().tipo + " Y AVANZA HACIA EL");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX-1][posicionY] = tipo; //AVANZA
+			//posicionY= posicionY+1;
+			posicionX = posicionX -1;
+			return true;}
+		else if (Tablero.matriz[posicionX][posicionY-1]==0) {
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJNoroeste().tipo + " Y AVANZA HACIA EL");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX][posicionY-1] = tipo; //AVANZA
+			posicionY= posicionY-1;
+			return true;}}
+	
+	if (vePJSuroeste() != null) {
+		if(Tablero.matriz[posicionX+1][posicionY]==0) {
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJSuroeste().tipo + " Y AVANZA HACIA EL");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX+1][posicionY] = tipo; //AVANZA
+			//posicionY= posicionY+1;
+			posicionX = posicionX + 1;
+			return true;}
+		else if (Tablero.matriz[posicionX][posicionY-1]==0) {
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJSuroeste().tipo + " Y AVANZA HACIA EL");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX][posicionY-1] = tipo; //AVANZA
+			posicionY= posicionY-1;
+			return true;}}
+	
+	if (vePJSureste() != null) {
+		if(Tablero.matriz[posicionX+1][posicionY]==0) {
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJSureste().tipo + " Y AVANZA HACIA EL");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX+1][posicionY] = tipo; //AVANZA
+			//posicionY= posicionY+1;
+			posicionX = posicionX + 1;
+			return true;}
+		else if (Tablero.matriz[posicionX][posicionY-1]==0) {
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "VE A JUGADOR "+vePJSureste().tipo + " Y AVANZA HACIA EL");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX][posicionY+1] = tipo; //AVANZA
+			posicionY= posicionY+1;
+			return true;}}
+	
 	return false;
 }
 

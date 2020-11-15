@@ -9,7 +9,7 @@ public class Main {
 	
 	
 	
-	static Enemigo zombie1= new Enemigo (11,3,8); //HABILIDAD ESPECIAL DOBLE VIDA
+	static Enemigo zombie1= new Enemigo (11,5,3); //HABILIDAD ESPECIAL DOBLE VIDA
 	static Enemigo zombie2= new Enemigo (22,4,8); //HABILIDAD ESPECIAL DOBLE FUERZA
 	static Enemigo zombie3= new Enemigo (33,5,8); //HABILIDAD ESPECIAL DOBLE VISION
 	
@@ -30,8 +30,8 @@ public class Main {
 	//DECLARACION DE JUGADORES ********************************************************************************
 	//Jugador(int _tipo, int x, int y, Arma _arma)
 	
-	static Jugador j1= new Jugador (1,4,1,katanaInicial);
-	static Jugador j2= new Jugador (2,3,0,katanaInicial);
+	static Jugador j1= new Jugador (1,6,4,katanaInicial);
+	static Jugador j2= new Jugador (2,2,0,katanaInicial);
 	static Jugador j3= new Jugador (3,5,0,katanaInicial);
 	
 	static Jugador jugadores[] = {j1,j2,j3};
@@ -130,7 +130,9 @@ public class Main {
 			
 			Tablero.sigTurno = false;
 			
-			
+			if (turno == 10) {
+				FinishGame.initGameOver("SE ACABARON LOS TURNOS.");
+			}
 			
 			turno ++;
 		}
