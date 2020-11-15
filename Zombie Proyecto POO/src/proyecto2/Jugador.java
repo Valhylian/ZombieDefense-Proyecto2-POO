@@ -22,7 +22,7 @@ public class Jugador extends Personaje {
 	public Jugador(int _tipo, int x, int y, Arma _arma){
 		this.tipo=_tipo;
 		this.nivel = 1;
-		this.vida=1;
+		this.vida=100;
 		this.posicionX=x;
 		this.posicionY=y;
 		this.exp = 0;
