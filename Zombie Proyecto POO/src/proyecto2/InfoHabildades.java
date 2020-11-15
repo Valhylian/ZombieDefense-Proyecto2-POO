@@ -38,7 +38,7 @@ public class InfoHabildades {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 693, 281);
+		frame.setBounds(100, 100, 693, 456);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -112,6 +112,51 @@ public class InfoHabildades {
 		JLabel lblDobleDaoarma = new JLabel("DOBLE DA\u00D1O (ARMA CORTO ALCANCE)");
 		lblDobleDaoarma.setBounds(430, 201, 237, 14);
 		frame.getContentPane().add(lblDobleDaoarma);
+		
+		JLabel lblNiveles = new JLabel("NIVELES");
+		lblNiveles.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNiveles.setBounds(10, 258, 79, 14);
+		frame.getContentPane().add(lblNiveles);
+		
+		JLabel lblExp = new JLabel("EXP");
+		lblExp.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblExp.setBounds(99, 258, 79, 14);
+		frame.getContentPane().add(lblExp);
+		
+		JLabel label_2 = new JLabel("LVL 2");
+		label_2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		label_2.setBounds(10, 325, 50, 14);
+		frame.getContentPane().add(label_2);
+		
+		JLabel lblLvl_4 = new JLabel("LVL 3");
+		lblLvl_4.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblLvl_4.setBounds(10, 361, 50, 14);
+		frame.getContentPane().add(lblLvl_4);
+		
+		JLabel lblLvl_5 = new JLabel("LVL 4");
+		lblLvl_5.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblLvl_5.setBounds(10, 392, 50, 14);
+		frame.getContentPane().add(lblLvl_5);
+		
+		JLabel lblLvl_3 = new JLabel("LVL 1");
+		lblLvl_3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblLvl_3.setBounds(10, 292, 50, 14);
+		frame.getContentPane().add(lblLvl_3);
+		
+		JLabel label = new JLabel("0 - 9");
+		label.setBounds(87, 292, 145, 14);
+		frame.getContentPane().add(label);
+		
+		JLabel label_1 = new JLabel("10 - 29");
+		label_1.setBounds(87, 325, 145, 14);
+		frame.getContentPane().add(label_1);
+		
+		JLabel label_3 = new JLabel("30 - 59");
+		label_3.setBounds(87, 361, 145, 14);
+		frame.getContentPane().add(label_3);
+		
+		JLabel label_4 = new JLabel("60 - ...");
+		label_4.setBounds(87, 392, 145, 14);
+		frame.getContentPane().add(label_4);
 	}
-
 }
