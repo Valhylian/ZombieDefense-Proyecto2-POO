@@ -139,7 +139,7 @@ public class Emergente {
 		oeste.setBounds(28, 149, 45, 44);
 		frame.getContentPane().add(oeste);
 		
-		JLabel lblNewLabel_1 = new JLabel("SAMURAI BASICO");
+		JLabel lblNewLabel_1 = new JLabel("SAMURAI");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_1.setBounds(116, 22, 135, 14);
 		frame.getContentPane().add(lblNewLabel_1);
@@ -336,7 +336,7 @@ public class Emergente {
 		oeste.setEnabled(false);
 		frame.getContentPane().add(oeste);
 		
-		JLabel lblNewLabel_1 = new JLabel("SAMURAI BASICO");
+		JLabel lblNewLabel_1 = new JLabel("SAMURAI");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblNewLabel_1.setBounds(116, 22, 135, 14);
 		frame.getContentPane().add(lblNewLabel_1);

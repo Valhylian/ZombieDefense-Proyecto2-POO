@@ -14,12 +14,12 @@ public class Enemigo extends Personaje {
 		if (_tipo==11) {
 			this.vida=200;
 			this.vision = 2;
-			this.fuerza = 10;
+			this.fuerza = 20;
 		}
 		else if (_tipo==22) {
 			this.vida=100;
 			this.vision = 2;
-			this.fuerza = 20;
+			this.fuerza = 40;
 		}
 		else if (_tipo==33) {
 			this.vida=100;

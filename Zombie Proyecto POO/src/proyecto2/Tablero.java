@@ -13,9 +13,9 @@ public class Tablero {
 	public static int matriz[][] = {{101,100,0,5,0,0,0,0,0,0},
 									{0,0,0,5,0,0,0,5,0,0},
 									{0,0,0,0,0,0,0,5,0,0},
-									{0,0,0,0,5,5,0,0,0,0},
+									{0,0,0,0,5,0,0,0,0,0},
 									{4,0,0,0,5,0,0,0,0,0},
-									{0,0,0,0,5,5,0,0,0,0},
+									{0,0,0,0,5,0,0,0,0,0},
 									{0,0,0,0,0,0,0,5,0,0},
 									{0,0,0,5,0,0,0,5,0,0},
 									{0,0,0,5,0,0,0,0,0,0},
@@ -98,11 +98,13 @@ public class Tablero {
 		}
 		if (turno == 4) {
 			colocarZombie (33, 2 , 9); 
-			colocarZombie (11, 7 , 9);
+			colocarZombie (11, 9 , 9);
+			colocarZombie (22, 7 , 9);
 		}
 		if (turno == 5) {
 			colocarZombie (33, 4 , 9); 
 			colocarZombie (22, 5 , 9);
+			colocarZombie (11, 9 , 9);
 		}
 		if (turno == 6) {
 			colocarZombie (11, 0 , 9); 
@@ -120,6 +122,7 @@ public class Tablero {
 			colocarZombie (33, 0 , 9); 
 			colocarZombie (22, 2 , 9);
 			colocarZombie (33, 7 , 9); 
+			colocarZombie (11, 5 , 9); 
 		}
 		
 		if (turno == 9) {
