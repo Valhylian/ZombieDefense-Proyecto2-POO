@@ -150,13 +150,27 @@ public class Main {
 		
 		Item itemCura = new Item(10, "curativo");
 		Item itemCura2 = new Item(10, "curativo");
+		Item itemCura3 = new Item(10, "curativo");
+		
 		Item itemExp = new Item(10, "experiencia");
+		Item itemExp2 = new Item(10, "experiencia");
+		Item itemExp3 = new Item(10, "experiencia");
+		Item itemExp4 = new Item(10, "experiencia");
+		Item itemExp5 = new Item(10, "experiencia");
+		Item itemExp6 = new Item(10, "experiencia");
 		
 		j1.inventarioItems.add(itemExp);
+		j1.inventarioItems.add(itemExp2);
 		j1.inventarioItems.add(itemCura);
-		/*
-		j3.inventarioItems.add(itemCura2);
-		j3.inventarioItems.add(itemExp);*/
+		
+		j2.inventarioItems.add(itemExp3);
+		j2.inventarioItems.add(itemExp4);
+		j2.inventarioItems.add(itemCura2);
+		
+		j3.inventarioItems.add(itemExp5);
+		j3.inventarioItems.add(itemExp6);
+		j3.inventarioItems.add(itemCura3);
+		
 		
 		//ARMAS INICIALES
 		j1.inventarioArmas.add(katanaInicial);
@@ -166,8 +180,8 @@ public class Main {
 		
 		
 		
-		j2.inventarioArmas.add(catapultaInicial);
-		j1.inventarioArmas.add(especial);
+		//j2.inventarioArmas.add(catapultaInicial);
+		//j1.inventarioArmas.add(especial);
 		//Inventario.initInventario(j1);
 		/*
 		
