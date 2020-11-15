@@ -47,7 +47,7 @@ public class InfoItem {
 		frame.getContentPane().setLayout(null);
 		
 		if (tipo == "curativo") {
-			JLabel name = new JLabel("Posion Curativa");
+			JLabel name = new JLabel("Pocion Curativa");
 			name.setHorizontalAlignment(SwingConstants.CENTER);
 			name.setFont(new Font("Tahoma", Font.BOLD, 16));
 			name.setBounds(10, 11, 237, 40);
@@ -70,7 +70,7 @@ public class InfoItem {
 		}
 		
 		else {
-			JLabel name = new JLabel("Posion Experiencia");
+			JLabel name = new JLabel("Pocion Experiencia");
 			name.setHorizontalAlignment(SwingConstants.CENTER);
 			name.setFont(new Font("Tahoma", Font.BOLD, 16));
 			name.setBounds(10, 11, 237, 40);
