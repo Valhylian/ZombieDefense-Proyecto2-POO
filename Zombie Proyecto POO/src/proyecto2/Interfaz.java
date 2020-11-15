@@ -228,6 +228,15 @@ public class Interfaz {
 		armaPj3.setBounds(82, 455, 144, 26);
 		panel.add(armaPj3);
 		
+		JButton habilidades = new JButton("HABILIDADES");
+		habilidades.setBounds(20, 550, 144, 26);
+		habilidades.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				InfoHabildades.info();
+			}
+		});
+		panel.add(habilidades);
+		
 		
 		
 		for (int i=0;i<10;i++) {
