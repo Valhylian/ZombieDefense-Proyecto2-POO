@@ -130,7 +130,7 @@ public class Inventario {
 		lblEspeciales.setBounds(10, 326, 154, 14);
 		frame.getContentPane().add(lblEspeciales);
 		
-		JButton btnNewButton_1 = new JButton("Posion Curativa.");
+		JButton btnNewButton_1 = new JButton("Pocion Curativa.");
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				InfoItem.iniciarItem(jugador, "curativo");
@@ -139,7 +139,7 @@ public class Inventario {
 		btnNewButton_1.setBounds(272, 122, 147, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Posion Experiencia.");
+		JButton btnNewButton_2 = new JButton("Pocion Experiencia.");
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				InfoItem.iniciarItem(jugador, "experiencia");

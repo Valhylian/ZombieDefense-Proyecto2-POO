@@ -9,19 +9,19 @@ public class Main {
 	
 	
 	
-	static Enemigo zombie1= new Enemigo (11,5,3); //HABILIDAD ESPECIAL DOBLE VIDA
+	static Enemigo zombie1= new Enemigo (11,4,5); //HABILIDAD ESPECIAL DOBLE VIDA
 	static Enemigo zombie2= new Enemigo (22,4,8); //HABILIDAD ESPECIAL DOBLE FUERZA
 	static Enemigo zombie3= new Enemigo (33,5,8); //HABILIDAD ESPECIAL DOBLE VISION
 	
 	//DECLARACION DE ARMAS **********************************************************************************
 	
 	//CORTO ALCANCE
-	static Arma katanaInicial = new Arma ("Katana Inicial",10, 1, 1); //damage, range, ruido
-	static Arma katana2 = new Arma ("Katana 2",20, 1, 2);
+	static Arma katanaInicial = new Arma ("Katana Inicial",20, 1, 1); //damage, range, ruido
+	static Arma katana2 = new Arma ("Katana 2",30, 1, 2);
 	
 	//LARGO ALCANCE
-	static Arma catapultaInicial = new Arma ("Catapulta Inicial",30, 2, 2); 
-	static Arma catapulta2 = new Arma ("Catapulta 2",50, 3, 3); 
+	static Arma catapultaInicial = new Arma ("Catapulta Inicial",40, 2, 2); 
+	static Arma catapulta2 = new Arma ("Catapulta 2",60, 3, 3); 
 	
 	//ARMA ESPECIAL (SOLA LA OPTIENEN POR LOS ZOMBIES)
 	static Arma especial = new Arma ("Super Gun",100, 5, 4); 

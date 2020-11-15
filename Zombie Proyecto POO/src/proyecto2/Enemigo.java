@@ -127,7 +127,7 @@ public class Enemigo extends Personaje {
 			else if (Main.zombies.get(i).avanzarBase()) {
 				System.out.println("AVANZA A LA BASE");}
 			else  {
-				JOptionPane.showMessageDialog(null, "NO HACE NADA! ");}
+				JOptionPane.showMessageDialog(null, "ZOMBIE "+ Main.zombies.get(i).tipo+  "NO TIENE OPCION DE MOVIEMIENTO! ");}
 				
 		}
 		ResumeTurnoZombie.init();
@@ -440,7 +440,29 @@ public boolean avanzarBase() { //4,0
 			Tablero.matriz[posicionX][posicionY] = 0; 
 			Tablero.matriz[posicionX][posicionY-1] = tipo; //AVANZA
 			posicionY= posicionY-1;
+			return true;}
+		
+		else if (dentroDeTablero(posicionX-1)&& (Tablero.matriz[posicionX-1][posicionY]==0 || Tablero.matriz[posicionX-1][posicionY]==4)){
+				JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "AVANZA A LA BASE");
+				Tablero.matriz[posicionX][posicionY] = 0; 
+				Tablero.matriz[posicionX-1][posicionY] = tipo; //AVANZA
+				posicionX= posicionX-1;
+				return true;}
+		
+		else if (dentroDeTablero(posicionX+1)&& (Tablero.matriz[posicionX+1][posicionY]==0 || Tablero.matriz[posicionX+1][posicionY]==4)){
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "AVANZA A LA BASE");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX+1][posicionY] = tipo; //AVANZA
+			posicionX= posicionX+1;
+			return true;}
+		
+		else if (dentroDeTablero(posicionY+1)&& (Tablero.matriz[posicionX][posicionY+1]==0 || Tablero.matriz[posicionX][posicionY+1]==4)){
+			JOptionPane.showMessageDialog(null, "ZOMBIE "+tipo+ "AVANZA A LA BASE/ SALE DE LOS OBSTACULOS");
+			Tablero.matriz[posicionX][posicionY] = 0; 
+			Tablero.matriz[posicionX][posicionY+1] = tipo; //AVANZA
+			posicionY = posicionY+1;
 			return true;}}
+	
 	
 	return false;
 }
