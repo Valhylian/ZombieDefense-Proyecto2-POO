@@ -63,7 +63,7 @@ public class InfoArma {
 		frame.getContentPane().add(btnNewButton);
 		
 		if (arma == "Katana Inicial") {
-			JLabel damage = new JLabel("Damage: 20");
+			JLabel damage = new JLabel("Damage: 30");
 			damage.setBounds(10, 72, 171, 14);
 			frame.getContentPane().add(damage);
 			
@@ -76,7 +76,7 @@ public class InfoArma {
 			frame.getContentPane().add(ruido);
 		}
 		else if (arma == "Katana 2") {
-			JLabel damage = new JLabel("Damage: 30");
+			JLabel damage = new JLabel("Damage: 40");
 			damage.setBounds(10, 72, 171, 14);
 			frame.getContentPane().add(damage);
 			
@@ -90,7 +90,7 @@ public class InfoArma {
 		}
 		
 		else if (arma == "Catapulta Inicial") {
-			JLabel damage = new JLabel("Damage: 40");
+			JLabel damage = new JLabel("Damage: 50");
 			damage.setBounds(10, 72, 171, 14);
 			frame.getContentPane().add(damage);
 			
@@ -103,7 +103,7 @@ public class InfoArma {
 			frame.getContentPane().add(ruido);
 		}
 		else if (arma == "Catapulta 2") {
-			JLabel damage = new JLabel("Damage: 60");
+			JLabel damage = new JLabel("Damage: 70");
 			damage.setBounds(10, 72, 171, 14);
 			frame.getContentPane().add(damage);
 			

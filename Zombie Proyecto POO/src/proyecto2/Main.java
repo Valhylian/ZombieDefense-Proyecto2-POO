@@ -16,12 +16,12 @@ public class Main {
 	//DECLARACION DE ARMAS **********************************************************************************
 	
 	//CORTO ALCANCE
-	static Arma katanaInicial = new Arma ("Katana Inicial",20, 1, 1); //damage, range, ruido
-	static Arma katana2 = new Arma ("Katana 2",30, 1, 2);
+	static Arma katanaInicial = new Arma ("Katana Inicial",30, 1, 1); //damage, range, ruido
+	static Arma katana2 = new Arma ("Katana 2",40, 1, 2);
 	
 	//LARGO ALCANCE
-	static Arma catapultaInicial = new Arma ("Catapulta Inicial",40, 2, 2); 
-	static Arma catapulta2 = new Arma ("Catapulta 2",60, 3, 3); 
+	static Arma catapultaInicial = new Arma ("Catapulta Inicial",50, 2, 2); 
+	static Arma catapulta2 = new Arma ("Catapulta 2",70, 3, 3); 
 	
 	//ARMA ESPECIAL (SOLA LA OPTIENEN POR LOS ZOMBIES)
 	static Arma especial = new Arma ("Super Gun",100, 5, 4); 
