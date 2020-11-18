@@ -9,9 +9,9 @@ public class Main {
 	
 	
 	
-	static Enemigo zombie1= new Enemigo (11,3,8); //HABILIDAD ESPECIAL DOBLE VIDA
-	static Enemigo zombie2= new Enemigo (22,4,8); //HABILIDAD ESPECIAL DOBLE FUERZA
-	static Enemigo zombie3= new Enemigo (33,5,8); //HABILIDAD ESPECIAL DOBLE VISION
+	static Enemigo zombie1= new Enemigo (11,3,6); //HABILIDAD ESPECIAL DOBLE VIDA
+	static Enemigo zombie2= new Enemigo (22,4,6); //HABILIDAD ESPECIAL DOBLE FUERZA
+	static Enemigo zombie3= new Enemigo (33,5,6); //HABILIDAD ESPECIAL DOBLE VISION
 	
 	//DECLARACION DE ARMAS **********************************************************************************
 	
